@@ -1,19 +1,19 @@
 # React (vite) + MUI + TanStack Query v4 project skeleton
 
-# Clone the repo:
+### Clone the repo:
 
 ```shell
 git clone https://github.com/aaabramov/react-mui-template
 ```
 
-## Running project
+### Running project
 
 ```shell
 pnpm run dev
 # Visit http://localhost:5173/
 ```
 
-## Building project
+### Building project
 
 ```shell
 pnpm run build
