@@ -1,11 +1,7 @@
-import React, {useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import {Box, Button, Container, Divider, Typography} from "@mui/material";
-import {QUERY_KEYS, useApi} from "./utils/api";
-import {useQuery} from "@tanstack/react-query";
+import React from 'react'
+import {Box, Container, Divider} from "@mui/material";
 import AppBar from "./layout/AppBar";
-import {createBrowserRouter, Outlet, Route, RouterProvider, Routes} from 'react-router-dom';
+import {createBrowserRouter, Outlet, Route, Routes} from 'react-router-dom';
 import {PostsList} from "./pages/posts/PostsList";
 import {Post} from "./pages/posts/Post";
 import {NewPost} from "./pages/posts/NewPost";
