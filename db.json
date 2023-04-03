@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nickname": "godhunter"
+    },
+    {
+      "id": 2,
+      "nickname": "blamer"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "SSE vs Websockets",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "Should JS be used server-side at all?",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "title": "Kotlin experience after years spent with Scala",
+      "userId": 2
+    }
+  ]
+}

@@ -1,22 +1,24 @@
-# React (vite) + MUI + TanStack Query v4 project skeleton
+# React (vite) + MUI + TanStack Query v4 + react-router-dom project skeleton
 
 ### Clone the repo:
 
 ```shell
-git clone https://github.com/aaabramov/react-mui-template
+$ git clone https://github.com/aaabramov/react-mui-template
+
+$ cd react-mui-template/
 ```
 
 ### Running project
 
 ```shell
-pnpm run dev
+$ pnpm run dev
 # Visit http://localhost:5173/
 ```
 
 ### Building project
 
 ```shell
-pnpm run build
+$ pnpm run build
 
 # Built project will be available under `dist` directory
 
@@ -28,4 +30,13 @@ pnpm run build
 # │         └── react-35ef61ed.svg
 # ├── index.html
 # └── vite.svg
+```
+
+### Running mock server
+
+```shell
+# See: https://github.com/typicode/json-server
+$ npm install -g json-server
+
+$ json-server -w db.json
 ```

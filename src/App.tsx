@@ -1,41 +1,47 @@
-import {useState} from 'react'
+import React, {useState} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import {Box, Button, Container, Typography} from "@mui/material";
+import {Box, Button, Container, Divider, Typography} from "@mui/material";
+import {QUERY_KEYS, useApi} from "./utils/api";
+import {useQuery} from "@tanstack/react-query";
+import AppBar from "./layout/AppBar";
+import {createBrowserRouter, Outlet, Route, RouterProvider, Routes} from 'react-router-dom';
+import {PostsList} from "./pages/posts/PostsList";
+import {Post} from "./pages/posts/Post";
+import {NewPost} from "./pages/posts/NewPost";
 
-function App() {
-    const [count, setCount] = useState(0)
+export const AppStubPage = ({name}: { name: string }) => <Box>The page: {name}</Box>;
 
+const AppRoot = () => (
+    <Container>
+        <AppBar/>
+        <Divider/>
+        <Outlet/>
+    </Container>
+);
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <div>Hello world!</div>,
+    },
+]);
+
+const App = () => {
     return (
-        <Container>
-            <Box sx={{my: 4}}>
-                <Typography variant="h4" component="h1" gutterBottom>
-                    Material UI Vite.js example in TypeScript
-                </Typography>
-            </Box>
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo"/>
-                </a>
-                <a href="https://reactjs.org" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo"/>
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={() => setCount((count) => count + 1)}
-                >
-                    count is {count}
-                </Button>
-            </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
-        </Container>
+        <Routes>
+            <Route path="/" element={<AppRoot/>}>
+                <Route path="posts">
+                    <Route index element={<PostsList/>}/>
+                    <Route path="new" element={<NewPost/>}/>
+                    <Route path=":paramPostId" element={<Post/>}/>
+                </Route>
+                <Route path="users">
+                    <Route index element={<AppStubPage name="Users index"/>}/>
+                </Route>
+            </Route>
+        </Routes>
     )
-}
+};
 
 export default App
